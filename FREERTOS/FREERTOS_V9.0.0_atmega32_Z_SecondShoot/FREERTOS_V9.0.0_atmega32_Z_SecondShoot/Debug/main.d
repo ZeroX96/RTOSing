@@ -14,7 +14,7 @@ main.d main.o: .././main.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stddef.h \
  .././FreeRTOSConfig.h .././projdefs.h .././portable.h \
  .././deprecated_definitions.h .././portmacro.h .././mpu_wrappers.h \
- .././task.h .././list.h
+ .././task.h .././list.h .././queue.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -57,3 +57,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\
 .././task.h:
 
 .././list.h:
+
+.././queue.h:

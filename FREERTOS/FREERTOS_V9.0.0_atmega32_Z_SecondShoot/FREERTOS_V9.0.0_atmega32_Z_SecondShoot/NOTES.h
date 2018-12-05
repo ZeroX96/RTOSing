@@ -88,6 +88,12 @@
 		The  interrupt  safe uxQueueMessagesWaitingFromISR() should be used in its place.
 ##	unsigned portBASE_TYPE uxQueueMessagesWaiting( xQueueHandle xQueue );
 
+13-	Allow the other sender task to execute. taskYIELD() informs the scheduler that a switch to another task should occur now rather than
+		keeping this task in the Running state until the end of the current time slice. 
+##	taskYIELD();
+
+14-	
+
 
 
 
