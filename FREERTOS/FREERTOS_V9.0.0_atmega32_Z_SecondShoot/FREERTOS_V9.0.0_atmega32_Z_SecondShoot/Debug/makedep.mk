@@ -14,6 +14,8 @@ main.c
 
 port.c
 
+queue.c
+
 tasks.c
 
 timers.c

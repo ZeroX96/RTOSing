@@ -43,6 +43,7 @@ C_SRCS +=  \
 ../list.c \
 ../main.c \
 ../port.c \
+../queue.c \
 ../tasks.c \
 ../timers.c
 
@@ -60,6 +61,7 @@ heap_2.o \
 list.o \
 main.o \
 port.o \
+queue.o \
 tasks.o \
 timers.o
 
@@ -70,6 +72,7 @@ heap_2.o \
 list.o \
 main.o \
 port.o \
+queue.o \
 tasks.o \
 timers.o
 
@@ -80,6 +83,7 @@ heap_2.d \
 list.d \
 main.d \
 port.d \
+queue.d \
 tasks.d \
 timers.d
 
@@ -90,6 +94,7 @@ heap_2.d \
 list.d \
 main.d \
 port.d \
+queue.d \
 tasks.d \
 timers.d
 
@@ -107,6 +112,8 @@ LINKER_SCRIPT_DEP+=
 
 
 # AVR32/GNU C Compiler
+
+
 
 
 
