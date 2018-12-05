@@ -157,6 +157,9 @@
     <Compile Include="mpu_wrappers.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="NOTES.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="port.c">
       <SubType>compile</SubType>
     </Compile>

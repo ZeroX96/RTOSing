@@ -8,25 +8,53 @@
 #include <avr/io.h>
 #include "FREERTOS.h"
 #include "task.h"
+#include "queue.h"
 
+void task1(void * pv);
+void task2(void * pv);
+
+typedef struct tasks_info 
+{
+	char px_data_byte;
+}tasks_info_t;
+void main(void)
+{
+	tasks_info_t obj_1;
+	DDRA=0xff;		DDRB=0xff;		DDRC=0xff;		DDRD=0xff;
+	char msa=0xff;
+	xQueueHandle queue_1_handle=xQueueCreate( 5, sizeof(int*));
+	if (queue_1_handle != NULL)
+	{
+		obj_1.px_data_byte= msa;
+		xTaskCreate(task1,NULL,configMINIMAL_STACK_SIZE,(void *)&obj_1,1,NULL);
+		xTaskCreate(task2,NULL,configMINIMAL_STACK_SIZE,(void *)&obj_1,2,NULL);
+		vTaskStartScheduler();
+	} 
+	else //couldn't create a queue
+	{
+		PORTA=PORTB=PORTC=PORTD=0x55;
+	}
+	
+}
 void task1(void * pv)
 {
 	while(1)
 	{
-				
+		PORTA=(((tasks_info_t *)pv)->px_data_byte++);
+		xQueueSendToBack(queue_1_handle,( ( (tasks_info_t *)pv )->px_data_byte ),10);
+		vTaskDelay(100);
 	}
 }
 
-int main(void)
+void task2(void * pv)
 {
-	
-	DDRA=0xff;
-	DDRB=0xff;
-	DDRC=0xff;
-	DDRD=0xff;
-	char msa=0xff;
-	xTaskCreate(task1,NULL,configMINIMAL_STACK_SIZE,(void *)&msa,5,NULL);
-	vTaskStartScheduler();
+	portBASE_TYPE rx_buff=0;
+	while(1)
+	{
+		xQueueReceive(queue_1_handle,&rx_buff,10);
+		PORTA= rx_buff;
+		vTaskDelay(100);
+	}
 }
 
 
