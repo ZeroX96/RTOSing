@@ -10,7 +10,7 @@
 #include "task.h"
 #include "queue.h"
 
-//structures as task messages
+//test-3 structures as task messages
 /*
 void TX_F(void * pv);
 void RX_F(void * pv);
@@ -82,7 +82,7 @@ void RX_F(void * pv)
 */
 
 
-//Creating and using a queue
+//test-2 Creating and using a queue
 /*
 void task1(void * pv);
 void task2(void * pv);
@@ -136,7 +136,7 @@ void task2(void * pv)
 }
 */
 
-//testing the running of v9.0.0
+//test-1 testing the running of v9.0.0
 /*
 void task4(void * pv)
 {
