@@ -113,6 +113,8 @@ Discarded input sections
                 0x00000000        0x6 tasks.o
  .text.pcTaskGetName
                 0x00000000       0x10 tasks.o
+ .text.vTaskDelay
+                0x00000000       0x28 tasks.o
  .text.vTaskPlaceOnUnorderedEventList
                 0x00000000       0x32 tasks.o
  .text.xTaskRemoveFromUnorderedEventList
@@ -324,7 +326,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x13a8
+.text           0x00000000     0x13c0
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -426,95 +428,92 @@ END GROUP
  .text.uxListRemove
                 0x000002f4       0x4c list.o
                 0x000002f4                uxListRemove
- .text.task1    0x00000340       0x48 main.o
-                0x00000340                task1
- .text.task2    0x00000388       0x3a main.o
-                0x00000388                task2
- .text.main     0x000003c2       0x82 main.o
-                0x000003c2                main
+ .text.TX_F     0x00000340       0x2c main.o
+                0x00000340                TX_F
+ .text.RX_F     0x0000036c       0x4e main.o
+                0x0000036c                RX_F
+ .text.main     0x000003ba       0xbc main.o
+                0x000003ba                main
  .text.pxPortInitialiseStack
-                0x00000444       0xd8 port.o
-                0x00000444                pxPortInitialiseStack
+                0x00000476       0xd8 port.o
+                0x00000476                pxPortInitialiseStack
  .text.xPortStartScheduler
-                0x0000051c       0x6a port.o
-                0x0000051c                xPortStartScheduler
+                0x0000054e       0x6a port.o
+                0x0000054e                xPortStartScheduler
  .text.vPortYield
-                0x00000586       0xb2 port.o
-                0x00000586                vPortYield
+                0x000005b8       0xb2 port.o
+                0x000005b8                vPortYield
  .text.vPortYieldFromTick
-                0x00000638       0xb8 port.o
-                0x00000638                vPortYieldFromTick
+                0x0000066a       0xb8 port.o
+                0x0000066a                vPortYieldFromTick
  .text.__vector_7
-                0x000006f0        0x6 port.o
-                0x000006f0                __vector_7
+                0x00000722        0x6 port.o
+                0x00000722                __vector_7
  .text.prvCopyDataToQueue
-                0x000006f6       0x92 queue.o
+                0x00000728       0x92 queue.o
  .text.prvCopyDataFromQueue
-                0x00000788       0x34 queue.o
+                0x000007ba       0x34 queue.o
  .text.prvUnlockQueue
-                0x000007bc       0x9a queue.o
+                0x000007ee       0x9a queue.o
  .text.xQueueGenericReset
-                0x00000856       0x7a queue.o
-                0x00000856                xQueueGenericReset
+                0x00000888       0x7a queue.o
+                0x00000888                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x000008d0       0x5a queue.o
-                0x000008d0                xQueueGenericCreate
+                0x00000902       0x5a queue.o
+                0x00000902                xQueueGenericCreate
  .text.xQueueGenericSend
-                0x0000092a      0x142 queue.o
-                0x0000092a                xQueueGenericSend
+                0x0000095c      0x142 queue.o
+                0x0000095c                xQueueGenericSend
  .text.xQueueGenericReceive
-                0x00000a6c      0x16a queue.o
-                0x00000a6c                xQueueGenericReceive
- .text.prvIdleTask
-                0x00000bd6        0x2 tasks.o
+                0x00000a9e      0x16a queue.o
+                0x00000a9e                xQueueGenericReceive
  .text.prvResetNextTaskUnblockTime
-                0x00000bd8       0x3e tasks.o
+                0x00000c08       0x3e tasks.o
+ .text.prvIdleTask
+                0x00000c46       0x10 tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x00000c16       0x88 tasks.o
+                0x00000c56       0x88 tasks.o
  .text.xTaskCreate
-                0x00000c9e      0x1f6 tasks.o
-                0x00000c9e                xTaskCreate
+                0x00000cde      0x1f6 tasks.o
+                0x00000cde                xTaskCreate
  .text.vTaskStartScheduler
-                0x00000e94       0x54 tasks.o
-                0x00000e94                vTaskStartScheduler
+                0x00000ed4       0x54 tasks.o
+                0x00000ed4                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00000ee8        0xc tasks.o
-                0x00000ee8                vTaskSuspendAll
+                0x00000f28        0xc tasks.o
+                0x00000f28                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x00000ef4      0x176 tasks.o
-                0x00000ef4                xTaskIncrementTick
+                0x00000f34      0x176 tasks.o
+                0x00000f34                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x0000106a       0xfe tasks.o
-                0x0000106a                xTaskResumeAll
- .text.vTaskDelay
-                0x00001168       0x28 tasks.o
-                0x00001168                vTaskDelay
+                0x000010aa       0xfe tasks.o
+                0x000010aa                xTaskResumeAll
  .text.vTaskSwitchContext
-                0x00001190       0xcc tasks.o
-                0x00001190                vTaskSwitchContext
+                0x000011a8       0xcc tasks.o
+                0x000011a8                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x0000125c       0x24 tasks.o
-                0x0000125c                vTaskPlaceOnEventList
+                0x00001274       0x24 tasks.o
+                0x00001274                vTaskPlaceOnEventList
  .text.xTaskRemoveFromEventList
-                0x00001280       0x90 tasks.o
-                0x00001280                xTaskRemoveFromEventList
+                0x00001298       0x90 tasks.o
+                0x00001298                xTaskRemoveFromEventList
  .text.vTaskSetTimeOutState
-                0x00001310       0x16 tasks.o
-                0x00001310                vTaskSetTimeOutState
+                0x00001328       0x16 tasks.o
+                0x00001328                vTaskSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x00001326       0x64 tasks.o
-                0x00001326                xTaskCheckForTimeOut
+                0x0000133e       0x64 tasks.o
+                0x0000133e                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x0000138a        0x8 tasks.o
-                0x0000138a                vTaskMissedYield
+                0x000013a2        0x8 tasks.o
+                0x000013a2                vTaskMissedYield
  .text.avr-libc
-                0x00001392       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
-                0x00001392                memcpy
-                0x000013a4                . = ALIGN (0x2)
+                0x000013aa       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                0x000013aa                memcpy
+                0x000013bc                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000013a4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x000013a4                _exit
-                0x000013a4                exit
+ .fini9         0x000013bc        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000013bc                _exit
+                0x000013bc                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -533,84 +532,87 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000013a4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000013bc        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000013a8                _etext = .
+                0x000013c0                _etext = .
 
-.data           0x00800060        0x8 load address 0x000013a8
+.data           0x00800060       0x1a load address 0x000013c0
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
  .data.xFreeBytesRemaining
                 0x00800060        0x2 heap_2.o
  *(.rodata)
+ .rodata        0x00800062        0xa main.o
  *(.rodata*)
  .rodata.str1.1
-                0x00800062        0x5 tasks.o
+                0x0080006c        0x8 main.o
+ .rodata.str1.1
+                0x00800074        0x5 tasks.o
  *(.gnu.linkonce.d*)
-                0x00800068                . = ALIGN (0x2)
- *fill*         0x00800067        0x1 
-                0x00800068                _edata = .
-                0x00800068                PROVIDE (__data_end, .)
+                0x0080007a                . = ALIGN (0x2)
+ *fill*         0x00800079        0x1 
+                0x0080007a                _edata = .
+                0x0080007a                PROVIDE (__data_end, .)
 
-.bss            0x00800068      0x2a4
-                0x00800068                PROVIDE (__bss_start, .)
+.bss            0x0080007a      0x2a4
+                0x0080007a                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.xHeapHasBeenInitialised.2078
-                0x00800068        0x1 heap_2.o
- .bss.xEnd      0x00800069        0x4 heap_2.o
- .bss.xStart    0x0080006d        0x4 heap_2.o
- .bss.ucHeap    0x00800071      0x258 heap_2.o
+                0x0080007a        0x1 heap_2.o
+ .bss.xEnd      0x0080007b        0x4 heap_2.o
+ .bss.xStart    0x0080007f        0x4 heap_2.o
+ .bss.ucHeap    0x00800083      0x258 heap_2.o
  .bss.uxSchedulerSuspended
-                0x008002c9        0x1 tasks.o
+                0x008002db        0x1 tasks.o
  .bss.xIdleTaskHandle
-                0x008002ca        0x2 tasks.o
+                0x008002dc        0x2 tasks.o
  .bss.xNextTaskUnblockTime
-                0x008002cc        0x2 tasks.o
+                0x008002de        0x2 tasks.o
  .bss.uxTaskNumber
-                0x008002ce        0x1 tasks.o
+                0x008002e0        0x1 tasks.o
  .bss.xNumOfOverflows
-                0x008002cf        0x1 tasks.o
+                0x008002e1        0x1 tasks.o
  .bss.xYieldPending
-                0x008002d0        0x1 tasks.o
+                0x008002e2        0x1 tasks.o
  .bss.uxPendedTicks
-                0x008002d1        0x1 tasks.o
+                0x008002e3        0x1 tasks.o
  .bss.xSchedulerRunning
-                0x008002d2        0x1 tasks.o
+                0x008002e4        0x1 tasks.o
  .bss.uxTopReadyPriority
-                0x008002d3        0x1 tasks.o
+                0x008002e5        0x1 tasks.o
  .bss.xTickCount
-                0x008002d4        0x2 tasks.o
+                0x008002e6        0x2 tasks.o
  .bss.uxCurrentNumberOfTasks
-                0x008002d6        0x1 tasks.o
+                0x008002e8        0x1 tasks.o
  .bss.xPendingReadyList
-                0x008002d7        0x9 tasks.o
+                0x008002e9        0x9 tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x008002e0        0x2 tasks.o
+                0x008002f2        0x2 tasks.o
  .bss.pxDelayedTaskList
-                0x008002e2        0x2 tasks.o
+                0x008002f4        0x2 tasks.o
  .bss.xDelayedTaskList2
-                0x008002e4        0x9 tasks.o
+                0x008002f6        0x9 tasks.o
  .bss.xDelayedTaskList1
-                0x008002ed        0x9 tasks.o
+                0x008002ff        0x9 tasks.o
  .bss.pxReadyTasksLists
-                0x008002f6       0x12 tasks.o
+                0x00800308       0x12 tasks.o
  .bss.pxCurrentTCB
-                0x00800308        0x2 tasks.o
-                0x00800308                pxCurrentTCB
+                0x0080031a        0x2 tasks.o
+                0x0080031a                pxCurrentTCB
  *(COMMON)
- COMMON         0x0080030a        0x2 main.o
-                0x0080030a                queue_1_handle
-                0x0080030c                PROVIDE (__bss_end, .)
-                0x000013a8                __data_load_start = LOADADDR (.data)
-                0x000013b0                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080031c        0x2 main.o
+                0x0080031c                queue_1_handle
+                0x0080031e                PROVIDE (__bss_end, .)
+                0x000013c0                __data_load_start = LOADADDR (.data)
+                0x000013da                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x0080030c        0x0
+.noinit         0x0080031e        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x0080030c                _end = .
+                0x0080031e                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -698,69 +700,69 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x3616
+.debug_info     0x00000000     0x36f5
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x33a heap_2.o
  .debug_info    0x00000820      0x2cd list.o
- .debug_info    0x00000aed      0x2e7 main.o
- .debug_info    0x00000dd4      0x263 port.o
- .debug_info    0x00001037     0x108f queue.o
- .debug_info    0x000020c6     0x1550 tasks.o
+ .debug_info    0x00000aed      0x3c0 main.o
+ .debug_info    0x00000ead      0x263 port.o
+ .debug_info    0x00001110     0x108f queue.o
+ .debug_info    0x0000219f     0x1556 tasks.o
 
-.debug_abbrev   0x00000000      0xf2a
+.debug_abbrev   0x00000000      0xfaa
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_abbrev  0x000004a3      0x1ba heap_2.o
  .debug_abbrev  0x0000065d       0xf8 list.o
- .debug_abbrev  0x00000755      0x10e main.o
- .debug_abbrev  0x00000863      0x155 port.o
- .debug_abbrev  0x000009b8      0x261 queue.o
- .debug_abbrev  0x00000c19      0x311 tasks.o
+ .debug_abbrev  0x00000755      0x18e main.o
+ .debug_abbrev  0x000008e3      0x155 port.o
+ .debug_abbrev  0x00000a38      0x261 queue.o
+ .debug_abbrev  0x00000c99      0x311 tasks.o
 
-.debug_line     0x00000000     0x1c7f
+.debug_line     0x00000000     0x1c85
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x115 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000115      0x27c heap_2.o
  .debug_line    0x00000391      0x1cb list.o
- .debug_line    0x0000055c      0x18d main.o
- .debug_line    0x000006e9      0x288 port.o
- .debug_line    0x00000971      0x7e8 queue.o
- .debug_line    0x00001159      0xb26 tasks.o
+ .debug_line    0x0000055c      0x187 main.o
+ .debug_line    0x000006e3      0x288 port.o
+ .debug_line    0x0000096b      0x7e8 queue.o
+ .debug_line    0x00001153      0xb32 tasks.o
 
-.debug_frame    0x00000000      0x7ec
+.debug_frame    0x00000000      0x7dc
  *(.debug_frame)
  .debug_frame   0x00000000       0x7c heap_2.o
  .debug_frame   0x0000007c       0x88 list.o
- .debug_frame   0x00000104       0x84 main.o
- .debug_frame   0x00000188       0x74 port.o
- .debug_frame   0x000001fc      0x258 queue.o
- .debug_frame   0x00000454      0x398 tasks.o
+ .debug_frame   0x00000104       0x74 main.o
+ .debug_frame   0x00000178       0x74 port.o
+ .debug_frame   0x000001ec      0x258 queue.o
+ .debug_frame   0x00000444      0x398 tasks.o
 
-.debug_str      0x00000000     0x115b
+.debug_str      0x00000000     0x117d
  *(.debug_str)
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.132/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x2f0 heap_2.o
                                 0x334 (size before relaxing)
  .debug_str     0x00000486      0x135 list.o
                                 0x2eb (size before relaxing)
- .debug_str     0x000005bb       0xb5 main.o
-                                0x264 (size before relaxing)
- .debug_str     0x00000670      0x118 port.o
+ .debug_str     0x000005bb       0xd7 main.o
+                                0x286 (size before relaxing)
+ .debug_str     0x00000692      0x10d port.o
                                 0x2e4 (size before relaxing)
- .debug_str     0x00000788      0x3bf queue.o
+ .debug_str     0x0000079f      0x3bf queue.o
                                 0x6f9 (size before relaxing)
- .debug_str     0x00000b47      0x614 tasks.o
+ .debug_str     0x00000b5e      0x61f tasks.o
                                 0xad1 (size before relaxing)
 
-.debug_loc      0x00000000     0x33d8
+.debug_loc      0x00000000     0x344a
  *(.debug_loc)
  .debug_loc     0x00000000      0x2ef heap_2.o
  .debug_loc     0x000002ef      0x145 list.o
- .debug_loc     0x00000434      0x15e main.o
- .debug_loc     0x00000592      0x2a0 port.o
- .debug_loc     0x00000832     0x1498 queue.o
- .debug_loc     0x00001cca     0x170e tasks.o
+ .debug_loc     0x00000434      0x1aa main.o
+ .debug_loc     0x000005de      0x2a0 port.o
+ .debug_loc     0x0000087e     0x1498 queue.o
+ .debug_loc     0x00001d16     0x1734 tasks.o
 
 .debug_macinfo
  *(.debug_macinfo)

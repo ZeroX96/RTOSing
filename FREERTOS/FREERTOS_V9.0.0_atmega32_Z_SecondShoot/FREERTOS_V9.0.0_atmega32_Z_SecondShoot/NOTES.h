@@ -92,7 +92,44 @@
 		keeping this task in the Running state until the end of the current time slice. 
 ##	taskYIELD();
 
-14-	
+14-	 Define the structure type that will be passed onthe queue. 
+##	typedef struct
+	{
+		unsigned char ucValue;
+		unsigned char ucSource;
+} xData;
+
+>>>	 Declare two variables of type xData that will bepassed on the queue. 
+##	static const xData xStructsToSend[ 2 ] =
+	{
+		{ 100, mainSENDER_1 }, /* Used by Sender1. 
+		{ 200, mainSENDER_2 }  /* Used by Sender2. 
+	};
+
+15-	 Allow the other sender task to execute. 
+##	taskYIELD();
+
+16-	Notice>>
+>>> Define the structure type that will be passed onthe queue. 
+##	typedef struct
+	{
+		unsigned char ucValue;
+		unsigned char ucSource;
+	} xData;
+>>> then 
+##	xData xReceivedStructure;
+	xStatus = xQueueReceive( xQueue, &xReceivedStructure, 0 );	//the add of the structure will receive data in is just used
+
+// The queue is created to hold a maximum of 3 structures of type xData. 
+##	xQueue = xQueueCreate( 3, sizeof( xData ) );
+
+
+
+
+
+
+
+
 
 
 
