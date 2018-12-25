@@ -118,7 +118,82 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="croutine.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="croutine.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="deprecated_definitions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="event_groups.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="event_groups.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FreeRTOS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FreeRTOSConfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="heap_2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="list.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="mpu_prototypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="mpu_wrappers.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="NOTES.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="port.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="portable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="portmacro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="projdefs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="queue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="queue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="semphr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="StackMacros.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="task.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="tasks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="timers.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>
